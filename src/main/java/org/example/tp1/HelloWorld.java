@@ -50,5 +50,7 @@ public class HelloWorld {
         int divider = 2;
         int result = 10 / divider;
         System.out.println(result);
+
+        sc.close();
     }
 }
