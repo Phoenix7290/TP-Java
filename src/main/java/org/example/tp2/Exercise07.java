@@ -1,4 +1,4 @@
-package org.example.TP2;
+package org.example.tp2;
 
 import java.util.Scanner;
 
@@ -7,27 +7,27 @@ public class Exercise07 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o seu salário bruto anual: R$ ");
-        double salarioBrutoAnual = scanner.nextDouble();
+        double annualGrossSalary = scanner.nextDouble();
 
-        double imposto = 0;
-        double salarioLiquido = salarioBrutoAnual;
+        double tax;
+        double netSalary;
 
-        if (salarioBrutoAnual <= 22847.76) {
-            imposto = 0;
-        } else if (salarioBrutoAnual <= 33919.80) {
-            imposto = salarioBrutoAnual * 0.075;
-        } else if (salarioBrutoAnual <= 45012.60) {
-            imposto = salarioBrutoAnual * 0.15;
-        } else if (salarioBrutoAnual <= 55976.16) {
-            imposto = salarioBrutoAnual * 0.225;
+        if (annualGrossSalary <= 22847.76) {
+            tax = 0;
+        } else if (annualGrossSalary <= 33919.80) {
+            tax = annualGrossSalary * 0.075;
+        } else if (annualGrossSalary <= 45012.60) {
+            tax = annualGrossSalary * 0.15;
+        } else if (annualGrossSalary <= 55976.16) {
+            tax = annualGrossSalary * 0.225;
         } else {
-            imposto = salarioBrutoAnual * 0.275;
+            tax = annualGrossSalary * 0.275;
         }
 
-        salarioLiquido = salarioBrutoAnual - imposto;
+        netSalary = annualGrossSalary - tax;
 
-        System.out.printf("Imposto de renda a pagar: R$ %.2f%n", imposto);
-        System.out.printf("Salário líquido: R$ %.2f%n", salarioLiquido);
+        System.out.printf("Imposto de renda a pagar: R$ %.2f%n", tax);
+        System.out.printf("Salário líquido: R$ %.2f%n", netSalary);
 
         scanner.close();
     }

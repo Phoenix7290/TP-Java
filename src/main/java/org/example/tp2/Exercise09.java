@@ -1,4 +1,4 @@
-package org.example.TP2;
+package org.example.tp2;
 
 import java.util.Scanner;
 
@@ -7,18 +7,18 @@ public class Exercise09 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Cadastre sua senha: ");
-        String senhaCadastro = scanner.nextLine();
+        String registeredPassword = scanner.nextLine();
 
-        String senhaDigitada;
+        String enteredPassword;
         do {
             System.out.print("Digite novamente a senha: ");
-            senhaDigitada = scanner.nextLine();
+            enteredPassword = scanner.nextLine();
 
-            if (!senhaCadastro.equals(senhaDigitada)) {
+            if (!registeredPassword.equals(enteredPassword)) {
                 System.out.println("Senha incorreta. Tente novamente.");
             }
 
-        } while (!senhaCadastro.equals(senhaDigitada));
+        } while (!registeredPassword.equals(enteredPassword));
 
         System.out.println("Senha cadastrada com sucesso!");
 

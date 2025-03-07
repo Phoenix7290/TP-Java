@@ -7,28 +7,31 @@ public class Exercise03 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o valor em reais: ");
-        double valorReais = scanner.nextDouble();
+        double valueInReais = scanner.nextDouble();
 
         System.out.print("Escolha a moeda de destino (dólar, euro ou libra): ");
-        String moedaDestino = scanner.next().toLowerCase();
+        String targetCurrency = scanner.next().toLowerCase();
 
-        double taxaCambio = 0;
-
-        if (moedaDestino.equals("dólar")) {
-            taxaCambio = 5.83;
-        } else if (moedaDestino.equals("euro")) {
-            taxaCambio = 6.06;
-        } else if (moedaDestino.equals("libra")) {
-            taxaCambio = 7.35;
-        } else {
-            System.out.println("Moeda não reconhecida.");
-            scanner.close();
-            return;
+        double exchangeRate;
+        switch (targetCurrency) {
+            case "dólar":
+                exchangeRate = 5.83;
+                break;
+            case "euro":
+                exchangeRate = 6.06;
+                break;
+            case "libra":
+                exchangeRate = 7.35;
+                break;
+            default:
+                System.out.println("Moeda não reconhecida.");
+                scanner.close();
+                return;
         }
 
-        double valorConvertido = valorReais / taxaCambio;
+        double convertedValue = valueInReais / exchangeRate;
 
-        System.out.printf("Valor convertido: %.2f %s\n", valorConvertido, moedaDestino);
+        System.out.printf("Valor convertido: %.2f %s\n", convertedValue, targetCurrency);
 
         scanner.close();
     }

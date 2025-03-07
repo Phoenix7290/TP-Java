@@ -1,4 +1,4 @@
-package org.example.TP2;
+package org.example.tp2;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -7,36 +7,26 @@ public class Exercise04 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite o dia de nascimento: ");
-        int diaNascimento = scanner.nextInt();
+        System.out.print("Coloque o seu dia de nascimento: ");
+        int birthDay = scanner.nextInt();
 
-        System.out.print("Digite o mês de nascimento: ");
-        int mesNascimento = scanner.nextInt();
+        System.out.print("Coloque o seu mes de nascimento: ");
+        int birthMonth = scanner.nextInt();
 
-        System.out.print("Digite o ano de nascimento: ");
-        int anoNascimento = scanner.nextInt();
+        System.out.print("Coloque o seu ano de nascimento: ");
+        int birthYear = scanner.nextInt();
 
-        int diasVividos = calcularDiasVividos(diaNascimento, mesNascimento, anoNascimento);
+        int daysLived = calculateDaysLived(birthDay, birthMonth, birthYear);
 
-        System.out.println("Você tem " + diasVividos + " dias de vida.");
+        System.out.println("Voce viveu " + daysLived + " dias.");
 
         scanner.close();
     }
 
-    public static int calcularDiasVividos(int dia, int mes, int ano) {
-        int dias = 0;
+    public static int calculateDaysLived(int day, int month, int year) {
+        LocalDate currentDate = LocalDate.now();
+        LocalDate birthDate = LocalDate.of(year, month, day);
 
-        LocalDate dataAtual = LocalDate.now();
-
-        int anoAtual = dataAtual.getYear();
-        int mesAtual = dataAtual.getMonthValue();
-        int diaAtual = dataAtual.getDayOfMonth();
-
-        LocalDate dataNascimento = LocalDate.of(ano, mes, dia);
-        LocalDate dataAtualDate = LocalDate.of(anoAtual, mesAtual, diaAtual);
-
-        dias = (int) java.time.temporal.ChronoUnit.DAYS.between(dataNascimento, dataAtualDate);
-
-        return dias;
+        return (int) java.time.temporal.ChronoUnit.DAYS.between(birthDate, currentDate);
     }
 }

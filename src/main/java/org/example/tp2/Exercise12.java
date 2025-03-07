@@ -1,4 +1,4 @@
-package org.example.TP2;
+package org.example.tp2;
 
 import java.util.Scanner;
 
@@ -6,14 +6,14 @@ public class Exercise12 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite uma frase: ");
-        String frase = scanner.nextLine();
+        System.out.print("Digite uma sentença ");
+        String sentence = scanner.nextLine();
 
-        String[] palavras = frase.split("\\s+");
+        String[] words = sentence.split("\\s+");
 
-        int numeroDePalavras = palavras.length;
+        int wordCount = words.length;
 
-        System.out.println("A frase contém " + numeroDePalavras + " palavras.");
+        System.out.println("A frase contém " + wordCount + " palavras.");
 
         scanner.close();
     }

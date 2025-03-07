@@ -1,4 +1,4 @@
-package org.example.TP2;
+package org.example.tp2;
 
 import java.util.Scanner;
 
@@ -7,24 +7,22 @@ public class Exercise05 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o valor da compra: R$ ");
-        double valorCompra = scanner.nextDouble();
+        double purchaseAmount = scanner.nextDouble();
 
-        double desconto = 0;
-        double valorFinal = valorCompra;
+        double discount = 0;
+        double finalAmount;
 
-        if (valorCompra > 1000) {
-            desconto = valorCompra * 0.10;
-        } else if (valorCompra >= 500) {
-            desconto = valorCompra * 0.05;
-        } else {
-            desconto = 0;
+        if (purchaseAmount > 1000) {
+            discount = purchaseAmount * 0.10;
+        } else if (purchaseAmount >= 500) {
+            discount = purchaseAmount * 0.05;
         }
 
-        valorFinal = valorCompra - desconto;
+        finalAmount = purchaseAmount - discount;
 
-        System.out.printf("Valor original: R$ %.2f%n", valorCompra);
-        System.out.printf("Desconto aplicado: R$ %.2f%n", desconto);
-        System.out.printf("Valor final: R$ %.2f%n", valorFinal);
+        System.out.printf("Valor original: R$ %.2f%n", purchaseAmount);
+        System.out.printf("Desconto aplicado: R$ %.2f%n", discount);
+        System.out.printf("Valor final: R$ %.2f%n", finalAmount);
 
         scanner.close();
     }

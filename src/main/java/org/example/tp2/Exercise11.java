@@ -1,4 +1,4 @@
-package org.example.TP2;
+package org.example.tp2;
 
 import java.util.Scanner;
 
@@ -7,16 +7,16 @@ public class Exercise11 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o valor inicial: ");
-        int valorInicial = scanner.nextInt();
+        int initialValue = scanner.nextInt();
 
         System.out.print("Digite o incremento: ");
-        int incremento = scanner.nextInt();
+        int increment = scanner.nextInt();
 
-        System.out.println("Sequencia abaixo:");
+        System.out.println("Sequencia:");
 
-        for (int i = valorInicial; i <= 100; i += incremento) {
+        for (int i = initialValue; i <= 100; i += increment) {
             System.out.print(i);
-            if (i + incremento <= 100) {
+            if (i + increment <= 100) {
                 System.out.print(", ");
             }
         }
